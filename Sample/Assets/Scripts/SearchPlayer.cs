@@ -51,6 +51,8 @@ public class SearchPlayer : MonoBehaviour
             return m_isCurrentFound;
         }
     }
+
+
     //感知する角度
     [SerializeField, Range(0.0f, 360.0f)]
     private float m_searchAngle = 0.0f;

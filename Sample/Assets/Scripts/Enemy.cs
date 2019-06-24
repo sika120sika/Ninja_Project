@@ -16,14 +16,6 @@ public enum EnemyState
 public class Enemy: StatefulObjectBase<Enemy,EnemyState>
 {
 
-    //マテリアルを変えるのは仮の処理
-    [SerializeField]
-    private Material m_defaultMaterial = null;
-    [SerializeField]
-    private Material m_foundMaterial = null;
-
-    private Renderer m_renderer = null;
-    
     //アニメーター（ステートクラス内で弄る）
     private Animator m_animator = null;
 
@@ -94,8 +86,6 @@ public class Enemy: StatefulObjectBase<Enemy,EnemyState>
 
     private void Awake()
     {
-        m_renderer = GetComponentInChildren<Renderer>();
-
         var searching = GetComponentInChildren<SearchPlayer>();
 
         //アニメーター取得
@@ -108,7 +98,6 @@ public class Enemy: StatefulObjectBase<Enemy,EnemyState>
     private void OnFound(GameObject foundObject)
     {
         m_target = foundObject;
-        m_renderer.material = m_foundMaterial;
         ChangeState(EnemyState.Chase);
         
     }
@@ -117,7 +106,6 @@ public class Enemy: StatefulObjectBase<Enemy,EnemyState>
     {
         m_target = null;
         if (m_target == null) { 
-            m_renderer.material = m_defaultMaterial;
         }
         ChangeState(EnemyState.Wander);
     }
@@ -275,12 +263,20 @@ public class Enemy: StatefulObjectBase<Enemy,EnemyState>
         public StateAttack(Enemy owner) : base(owner) { }
 
         private Vector3 moveDir;
+        private Weapon weapon = null;
         public override void Enter()
         {
+            //ワンチャン重い
+            weapon = owner.GetComponentInChildren<Weapon>();
+            if (weapon != null)
+            {
+                weapon.OnAttack = true;
+            }
             if (owner.Animator != null)
             {
                 owner.Animator.SetBool("Attack", true);
             }
+            owner.Speed = 1.0f;
         }
         public override void Execute()
         {
@@ -293,9 +289,16 @@ public class Enemy: StatefulObjectBase<Enemy,EnemyState>
                 owner.ChangeState(EnemyState.Chase);
                 return;
             }
+            moveDir.Normalize();
+            moveDir *= owner.Speed;
+            owner.CharacterController.Move(moveDir * Time.deltaTime);
         }
         public override void Exit()
         {
+            if (weapon != null)
+            {
+                weapon.OnAttack = false;
+            }
             if (owner.Animator != null)
             {
                 owner.Animator.SetBool("Attack",false);

@@ -41,6 +41,7 @@ public class StateMachine <T>
         currentState = state;
         currentState.Enter();
     }
+    //ステートの更新処理
     public void Update()
     {
         if (currentState != null)
@@ -51,8 +52,11 @@ public class StateMachine <T>
 }
 public class StatefulObjectBase <T,Tenum> : MonoBehaviour where T:class where Tenum : System.IConvertible
 {
+    //ステート管理用のリスト
     protected List<State<T>> stateList = new List<State<T>>();
+    //ステートマシン
     protected StateMachine<T> stateMachine;
+    //渡された値のステートへ遷移
     public virtual void ChangeState(Tenum state)
     {
         if(stateMachine == null)
@@ -61,6 +65,7 @@ public class StatefulObjectBase <T,Tenum> : MonoBehaviour where T:class where Te
         }
         stateMachine.ChangeState(stateList[state.ToInt32(null)]);
     }
+    //現在のステートを取得
     public virtual bool IsCurretState(Tenum state)
     {
         if(stateMachine == null)
@@ -69,6 +74,7 @@ public class StatefulObjectBase <T,Tenum> : MonoBehaviour where T:class where Te
         }
         return stateMachine.CurrentState == stateList[state.ToInt32(null)];
     }
+    //ステートマシンの更新処理
     protected virtual void Update()
     {
         if(stateMachine != null)
