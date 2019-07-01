@@ -7,14 +7,14 @@ public class Weapon : MonoBehaviour
     //武器の攻撃力
     [SerializeField]
     private int Power=0;
-    private bool onAttack=false;
+    private bool isAttacking=false;
 
     //攻撃中かどうか
-    public bool OnAttack {
-        get { return onAttack; }
+    public bool IsAttacking {
+        get { return isAttacking; }
         set
         {
-            onAttack = value;
+            isAttacking = value;
         }
 
     }
@@ -27,8 +27,10 @@ public class Weapon : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //攻撃中のみ判定
-        if (onAttack)
+        if (IsAttacking)
         {
+            //当たり判定のデバッグ用
+            Debug.Log("collision");
             //    var player = other.GetComponent<Player>();
             //    if (player != null)
             //    {
