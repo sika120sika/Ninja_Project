@@ -3,27 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum PlayerState
-{
-    //立つ
-    Stand,
-
-    //歩く
-    Walk,
-
-    //走る
-    Run,
-
-    //しゃがむ
-    Squat,
-
-    //しゃがんで歩く
-    Squat_Run,
-
-    //攻撃
-    Attack
-}
-
 public class Player : MonoBehaviour
 {
     private CharacterController controller = null;
@@ -35,8 +14,11 @@ public class Player : MonoBehaviour
     //ヒットポイント
     [SerializeField] private int HP = 100;
 
+    //走るスピード
+    [SerializeField] private float RunSpeed = 1.5f;
+
     //歩くスピード
-    [SerializeField] private float WalkSpeed = 0.5f;
+    [SerializeField] private float WalkSpeed = 0.1f;
 
     //振り向く速度
     [SerializeField] private float applySpeed = 0.2f;
@@ -76,28 +58,53 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) { vMove += -vAddS; }
         if (Input.GetKey(KeyCode.D)) { vMove += vAddS; }
 
-        //右クリック
-        if (Input.GetMouseButtonDown(0))
-        {
-
-        }        
-
         // 速度調整
         vMove.Normalize();
-        vMove *= WalkSpeed;
+
+        //アニメーションの速度
+        float AnimSpeed;
+
+        //進むスピードを設定
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            //歩く時
+            vMove *= WalkSpeed;
+            AnimSpeed = 0.5f;
+        }
+        //走る時
+        else
+        {
+            vMove *= RunSpeed;
+            AnimSpeed = 1.0f;
+        }
+            
 
 
         //キャラの振り向き処理
         if (vMove.magnitude > 0)
-        {
+        {            
             //プレイヤーが進行方向に向く
             transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.LookRotation(vMove),
-            applySpeed
+                applySpeed
             );
 
             var tmpvec = new Vector3(vMove.x, 0, vMove.z);
 
+            anim.SetBool("flg", true);
+            anim.SetFloat("Forward", AnimSpeed);
+        }
+        else
+        {
+            anim.SetBool("flg", false);
+
+            //アニメーションの速度を遅くする
+            AnimSpeed -= 0.3f;
+            if (AnimSpeed <= 0.2f)
+            {
+                AnimSpeed = 0.2f;
+            }
+            anim.SetFloat("Forward", AnimSpeed);
         }
 
         //地面についていなっかたら落下

@@ -58,6 +58,52 @@ ModelImporter:
     100104: Sphere
     100106: Sphere.001
     100108: Sphere.002
+    100110: Bip001 Head_end_end
+    100112: Bip001 L Finger0_end_end
+    100114: Bip001 L Finger1_end_end
+    100116: Bip001 L Finger2_end_end
+    100118: Bip001 L Finger3_end_end
+    100120: Bip001 L Toe0_end_end
+    100122: Bip001 R Finger0_end_end
+    100124: Bip001 R Finger1_end_end
+    100126: Bip001 R Finger2_end_end
+    100128: Bip001 R Finger3_end_end
+    100130: Bip001 R Toe0_end_end
+    100132: Camera.001
+    100134: Bip001 Head_end_end_end
+    100136: Bip001 L Finger0_end_end_end
+    100138: Bip001 L Finger1_end_end_end
+    100140: Bip001 L Finger2_end_end_end
+    100142: Bip001 L Finger3_end_end_end
+    100144: Bip001 L Toe0_end_end_end
+    100146: Bip001 R Finger0_end_end_end
+    100148: Bip001 R Finger1_end_end_end
+    100150: Bip001 R Finger2_end_end_end
+    100152: Bip001 R Finger3_end_end_end
+    100154: Bip001 R Toe0_end_end_end
+    100156: Bip001 Head_end_end_end_end
+    100158: Bip001 L Finger0_end_end_end_end
+    100160: Bip001 L Finger1_end_end_end_end
+    100162: Bip001 L Finger2_end_end_end_end
+    100164: Bip001 L Finger3_end_end_end_end
+    100166: Bip001 L Toe0_end_end_end_end
+    100168: Bip001 R Finger0_end_end_end_end
+    100170: Bip001 R Finger1_end_end_end_end
+    100172: Bip001 R Finger2_end_end_end_end
+    100174: Bip001 R Finger3_end_end_end_end
+    100176: Bip001 R Toe0_end_end_end_end
+    100178: Lamp.001
+    100180: Bip001 Head_end_end_end_end_end
+    100182: Bip001 L Finger0_end_end_end_end_end
+    100184: Bip001 L Finger1_end_end_end_end_end
+    100186: Bip001 L Finger2_end_end_end_end_end
+    100188: Bip001 L Finger3_end_end_end_end_end
+    100190: Bip001 L Toe0_end_end_end_end_end
+    100192: Bip001 R Finger0_end_end_end_end_end
+    100194: Bip001 R Finger1_end_end_end_end_end
+    100196: Bip001 R Finger2_end_end_end_end_end
+    100198: Bip001 R Finger3_end_end_end_end_end
+    100200: Bip001 R Toe0_end_end_end_end_end
     400000: Bip001
     400002: Bip001 Head
     400004: Bip001 L Calf
@@ -113,7 +159,54 @@ ModelImporter:
     400104: Sphere
     400106: Sphere.001
     400108: Sphere.002
+    400110: Bip001 Head_end_end
+    400112: Bip001 L Finger0_end_end
+    400114: Bip001 L Finger1_end_end
+    400116: Bip001 L Finger2_end_end
+    400118: Bip001 L Finger3_end_end
+    400120: Bip001 L Toe0_end_end
+    400122: Bip001 R Finger0_end_end
+    400124: Bip001 R Finger1_end_end
+    400126: Bip001 R Finger2_end_end
+    400128: Bip001 R Finger3_end_end
+    400130: Bip001 R Toe0_end_end
+    400132: Camera.001
+    400134: Bip001 Head_end_end_end
+    400136: Bip001 L Finger0_end_end_end
+    400138: Bip001 L Finger1_end_end_end
+    400140: Bip001 L Finger2_end_end_end
+    400142: Bip001 L Finger3_end_end_end
+    400144: Bip001 L Toe0_end_end_end
+    400146: Bip001 R Finger0_end_end_end
+    400148: Bip001 R Finger1_end_end_end
+    400150: Bip001 R Finger2_end_end_end
+    400152: Bip001 R Finger3_end_end_end
+    400154: Bip001 R Toe0_end_end_end
+    400156: Bip001 Head_end_end_end_end
+    400158: Bip001 L Finger0_end_end_end_end
+    400160: Bip001 L Finger1_end_end_end_end
+    400162: Bip001 L Finger2_end_end_end_end
+    400164: Bip001 L Finger3_end_end_end_end
+    400166: Bip001 L Toe0_end_end_end_end
+    400168: Bip001 R Finger0_end_end_end_end
+    400170: Bip001 R Finger1_end_end_end_end
+    400172: Bip001 R Finger2_end_end_end_end
+    400174: Bip001 R Finger3_end_end_end_end
+    400176: Bip001 R Toe0_end_end_end_end
+    400178: Lamp.001
+    400180: Bip001 Head_end_end_end_end_end
+    400182: Bip001 L Finger0_end_end_end_end_end
+    400184: Bip001 L Finger1_end_end_end_end_end
+    400186: Bip001 L Finger2_end_end_end_end_end
+    400188: Bip001 L Finger3_end_end_end_end_end
+    400190: Bip001 L Toe0_end_end_end_end_end
+    400192: Bip001 R Finger0_end_end_end_end_end
+    400194: Bip001 R Finger1_end_end_end_end_end
+    400196: Bip001 R Finger2_end_end_end_end_end
+    400198: Bip001 R Finger3_end_end_end_end_end
+    400200: Bip001 R Toe0_end_end_end_end_end
     2000000: Camera
+    2000002: Camera.001
     2100000: Mummy
     2100002: Mummy_Eye
     2100004: No Name
@@ -139,6 +232,7 @@ ModelImporter:
     7400000: Move
     9500000: //RootNode
     10800000: Lamp
+    10800002: Lamp.001
     13700000: Mummy_Arms
     13700002: Mummy_Body
     13700004: Mummy_Head
