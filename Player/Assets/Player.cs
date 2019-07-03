@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
             vMove *= RunSpeed;
             AnimSpeed = 1.0f;
         }
-            
+
 
 
         //キャラの振り向き処理
@@ -110,10 +110,8 @@ public class Player : MonoBehaviour
         //地面についていなっかたら落下
         if (!characterController.isGrounded)
         {
-            vMove.y -= Gravity;          
-        }        
-
-        
+            vMove.y -= Gravity;
+        }
 
         //移動を実行
         controller.Move(vMove);
